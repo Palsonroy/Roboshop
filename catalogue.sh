@@ -6,7 +6,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-MONGODB_HOST=mongodb.daws66s.online
+
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
@@ -88,6 +88,6 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "copying mongorepo client"
 
-mongo --host $MONGODB_HOST </app/schema/catalogue.js
+mongo --host mongodb.daws66s.online </app/schema/catalogue.js
 
 VALIDATE $? "loading catalogue data into mongodb"
